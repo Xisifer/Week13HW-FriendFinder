@@ -21,63 +21,22 @@ require("./app/routing/htmlRoutes.js")(app);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Star Wars friends (DATA)
-// =============================================================
-var friendlist = [
-  {
-    routeName: "yoda",
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000
-  },
-  {
-    routeName: "darthmaul",
-    name: "Darth Maul",
-    role: "Sith Lord",
-    age: 200,
-    forcePoints: 1200
-  },
-  {
-    routeName: "obiwankenobi",
-    name: "Obi Wan Kenobi",
-    role: "Jedi Master",
-    age: 55,
-    forcePoints: 1350
-  }
-];
+
+
+
+
+
+
 
 // Routes
 // =============================================================
-
-// Basic route that sends the user first to the AJAX Page
-app.get("/", function(request, response) {
-  response.sendFile(path.join(__dirname, "view.html"));
-});
-
-app.get("/add", function(request, response) {
-    response.sendFile(path.join(__dirname, "add.html"));
-});
 
 // Displays all friends
 app.get("/api/friends", function(request, response) {
   return response.json(friends);
 });
 
-// Displays a single friend, or returns false
-app.get("/api/friends/:friend", function(request, response) {
-  var chosen = request.params.friend;
 
-  console.log(chosen);
-
-  for (var i = 0; i < friends.length; i++) {
-    if (chosen === friends[i].routeName) {
-      return response.json(friends[i]);
-    }
-  }
-
-  return response.json(false);
-});
 
 // Create New friends - takes in JSON input
 app.post("/api/friends", function(request, response) {

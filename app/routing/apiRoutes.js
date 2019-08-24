@@ -7,10 +7,12 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function(request, response) {
-    console.log(request.body.scores);
+    
 
     // Receive user details (name, photo, scores)
     var user = request.body;
+    console.log("REQUEST.BODY IS: ");
+    console.log(request.body);
 
     // parseInt for scores
     for(var i = 0; i < user.scores.length; i++) {
