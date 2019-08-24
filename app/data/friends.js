@@ -23,6 +23,11 @@ var friends = [
 		name: "Frank",
 		photo: "https://vignette3.wikia.nocookie.net/itsalwayssunny/images/f/fe/Season_7_-_Frank.jpg",
 		scores: [3, 1, 4, 4, 2, 4, 2, 5, 1, 3]
+    },
+    {
+		name: "GRUMPY CAT",
+		photo: "https://pbs.twimg.com/profile_images/1080545769034108928/CEzHCTpI_400x400.jpg",
+		scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 	}
 ];
 

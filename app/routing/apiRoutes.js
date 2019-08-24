@@ -18,7 +18,7 @@ module.exports = function(app) {
       user.scores[i] = parseInt(user.scores[i]);
     }
 
-    // default friend match is the first friend but responseult will be whoever has the minimum difference in scores
+    // default friend match is the first friend but bestfriend will be whoever has the minimum difference in scores
     var bestFriendIndex = 0;
     var minimumDifference = 40;
 
@@ -42,7 +42,7 @@ module.exports = function(app) {
     friends.push(user);
 
     console.log("AFTER DOING ALL OUR MATH AND STUFF, FRIENDS IS NOW: ");
-    console.log(friends)
+    console.log(friends[bestFriendIndex])
 
     // send back to browser the best friend match
     response.json(friends[bestFriendIndex]);

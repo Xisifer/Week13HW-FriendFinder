@@ -188,7 +188,7 @@
   </div>
 
   <!-- Modal -->
-  <div id="results-modal" class="modal fade" role="dialog">
+  <div id="bestFriendModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -198,8 +198,8 @@
           <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
-          <h2 id="match-name"></h2>
-          <!-- <img id="match-img" src="./FriendFinder2_files/3435aa3.jpg" alt=""> -->
+          <h2 id="bestFriend"></h2>
+          <img id="bestFriendPhoto" src="./FriendFinder2_files/3435aa3.jpg" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -258,6 +258,8 @@
                 url: "/api/friends",
                 data: newUser
             }).then(function(data) {
+                console.log("OUR RESPONSE WITH BEST FRIEND IS: ");
+                console.log(data);
                 $("#bestFriend").text(data.name);
                 $("#bestFriendPhoto").attr("src", data.photo);
                 $("#bestFriendModal").modal("toggle");
@@ -265,13 +267,13 @@
 
 
 
-            $.post("/api/friends", newUser, 
-            function(data) {
+            // $.post("/api/friends", newUser, 
+            // function(data) {
 
-				$("#bestFriend").text(data.name);
-				$("#bestFriendPhoto").attr("src", data.photo);
-				$("#bestFriendModal").modal("toggle");
-			});
+			// 	$("#bestFriend").text(data.name);
+			// 	$("#bestFriendPhoto").attr("src", data.photo);
+			// 	$("#bestFriendModal").modal("toggle");
+			// });
 		} else {
 			// If a required field is missing, show alert
 			alert("Survey is incomplete!");
