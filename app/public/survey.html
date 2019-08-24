@@ -200,7 +200,8 @@
         </div>
         <div class="modal-body">
           <h2 id="bestFriend"></h2>
-          <img id="bestFriendPhoto" src="./FriendFinder2_files/3435aa3.jpg" alt="">
+          <img id="bestFriendPhoto" src="" alt="">
+          <p id="bestFriendQuote"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -209,9 +210,6 @@
 
     </div>
   </div>
-
-<!-- <script src="../../server.js"></script> -->
-
 
 <script type="text/javascript">
 
@@ -251,8 +249,6 @@
 					$("#q10 option:selected").val()
 				]
 			};
-            // var currentURL = window.location.origin;
-            // console.log(currentURL);
             // Ajax call for receiving response after POST req
             $.ajax({
                 type: "POST",
@@ -264,17 +260,9 @@
                 $("#bestFriend").text(data.name);
                 $("#bestFriendPhoto").attr("src", data.photo);
                 $("#bestFriendModal").modal("toggle");
+                $("#bestFriendQuote").text(data.quote);
             });
 
-
-
-            // $.post("/api/friends", newUser, 
-            // function(data) {
-
-			// 	$("#bestFriend").text(data.name);
-			// 	$("#bestFriendPhoto").attr("src", data.photo);
-			// 	$("#bestFriendModal").modal("toggle");
-			// });
 		} else {
 			// If a required field is missing, show alert
 			alert("Survey is incomplete!");
