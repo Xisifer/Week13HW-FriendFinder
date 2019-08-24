@@ -2,7 +2,7 @@
 // =========================================================
 const express = require("express");
 const path = require("path");
-const friends = require("app/data/friends")
+const friends = require("./app/data/friends")
 
 
 // For serving of static CSS
