@@ -1,4 +1,4 @@
-var friends = require("../data/friends").default;
+var friends = require("../data/friends");
 
 module.exports = function(app) {
   // Return all friends found in friends.js as JSON
@@ -7,12 +7,11 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function(request, response) {
+    // console.log(newUser);
     
 
     // Receive user details (name, photo, scores)
     var user = request.body;
-    console.log("REQUEST.BODY IS: ");
-    console.log(request.body);
 
     // parseInt for scores
     for(var i = 0; i < user.scores.length; i++) {
@@ -42,7 +41,11 @@ module.exports = function(app) {
     // after finding match, add user to friend array
     friends.push(user);
 
+    console.log("AFTER DOING ALL OUR MATH AND STUFF, FRIENDS IS NOW: ");
+    console.log(friends)
+
     // send back to browser the best friend match
     response.json(friends[bestFriendIndex]);
+
   });
 };

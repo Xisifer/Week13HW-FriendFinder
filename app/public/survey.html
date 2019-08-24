@@ -253,8 +253,6 @@
             // var currentURL = window.location.origin;
             // console.log(currentURL);
             // Ajax call for receiving response after POST req
-            console.log("NEW USER IS: ");
-            console.log(newUser);
             $.ajax({
                 type: "POST",
                 url: "/api/friends",
@@ -267,13 +265,13 @@
 
 
 
-            // $.post("/api/friends", newUser, 
-            // function(data) {
+            $.post("/api/friends", newUser, 
+            function(data) {
 
-			// 	$("#bestFriend").text(data.name);
-			// 	$("#bestFriendPhoto").attr("src", data.photo);
-			// 	$("#bestFriendModal").modal("toggle");
-			// });
+				$("#bestFriend").text(data.name);
+				$("#bestFriendPhoto").attr("src", data.photo);
+				$("#bestFriendModal").modal("toggle");
+			});
 		} else {
 			// If a required field is missing, show alert
 			alert("Survey is incomplete!");
