@@ -4,19 +4,17 @@ const express = require("express");
 const path = require("path");
 const friends = require("./app/data/friends.js")
 
-
-// For serving of static CSS
-app.use(express.static(__dirname + "/app/css"));
+// Sets up the Express App
+// =============================================================
+const app = express();
+var PORT = process.env.PORT || 3000;
 
 // API and HTML routes
 require("./app/routing/apiRoutes.js")(app);
 require("./app/routing/htmlRoutes.js")(app);
 
 
-// Sets up the Express App
-// =============================================================
-const app = express();
-var PORT = process.env.PORT || 3000;
+
 
 
 // Sets up the Express app to handle data parsing
