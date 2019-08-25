@@ -27,3 +27,22 @@ footer {
     border-radius: 0.5rem;
     font-weight: bold;
 }
+.modal-content {
+    color:black;
+}
+.modal-title {
+    text-align:left;
+}
+.modal-header .close {
+    padding: 1rem 1rem;
+    margin: -1rem -1rem -1rem -1rem;
+}
+.modal-header {
+    justify-content: flex-start;
+}
+#bestFriendQuote {
+    font-size: 20px;
+}
+#bestFriendPhoto {
+    border: 5px solid gray;
+}
