@@ -1,0 +1,29 @@
+body {
+    background-color: darkslategray;
+    color:white;
+}
+.jumbotron {
+    background-color: slategray;
+}
+div#surveyContainer.container {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: slategray;
+    border-radius: .3rem;
+}
+.btn-primary {
+    background-color:darkgray;
+    width:20%;
+}
+.btn-primary:hover {
+    background-color:dimgray;
+}
+.form-control {
+    width:25%;
+}
+footer {
+    background-color: lightgray;
+    padding: 0.2rem 0.1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
